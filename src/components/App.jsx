@@ -1,4 +1,4 @@
-var App = () => (
+var App = (props) => (
   <div>
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
@@ -6,11 +6,11 @@ var App = () => (
       </div>
     </nav>
     <div className="row">
-      <div className="col-md-7">
+      <div className="col-md-7"> 
         <div><h5><em>videoPlayer</em> view goes here</h5></div>
       </div>
       <div className="col-md-5">
-        <div><h5><em>videoList</em> view goes here</h5></div>
+        <div><h5><VideoList videos = {props.videos}/></h5></div>
       </div>
     </div>
   </div>
