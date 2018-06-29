@@ -4,7 +4,7 @@ class App extends React.Component {
     var boundTitleClick = this.titleClickHandler.bind(this);
     this.boundTitleClick = boundTitleClick;
     this.searchHandler = this.searchHandler.bind(this);
-    this.returnValue = this.returnValue.bind(this);
+
     this.state = {videoList: this.props.videos,
       currentVideo: this.props.videos[0],
       value: 'initial state'
@@ -24,10 +24,6 @@ class App extends React.Component {
 
     window.searchYouTube(input);
 
-  }
-
-  returnValue(value){
-    return this.state.value;
   }
 
   render() {
