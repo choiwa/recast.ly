@@ -7,7 +7,7 @@ class App extends React.Component {
     this.returnValue = this.returnValue.bind(this);
     this.state = {videoList: this.props.videos,
       currentVideo: this.props.videos[0],
-      value: ''
+      value: 'initial state'
     };
     //this.titleClickHandler = this.titleClickHandler.bind(this);
   }
@@ -18,15 +18,15 @@ class App extends React.Component {
   }
 
   searchHandler(input) {
-    console.log('before', input)
-    this.setState($('input').val()})
-    // console.log('after', this.state.value)
+    // console.log('before', input)
+    this.setState({value: input})
+    console.log('after', this.state.value)
 
-    window.searchYouTube("hello");
+    window.searchYouTube(input);
 
   }
 
-  returnValue(){
+  returnValue(value){
     return this.state.value;
   }
 
