@@ -3,17 +3,31 @@ class App extends React.Component {
     super(props);
     var boundTitleClick = this.titleClickHandler.bind(this);
     this.boundTitleClick = boundTitleClick;
+    this.searchHandler = this.searchHandler.bind(this);
+    this.returnValue = this.returnValue.bind(this);
     this.state = {videoList: this.props.videos,
-                  currentVideo: this.props.videos[0]
-              };
+      currentVideo: this.props.videos[0],
+      value: ''
+    };
     //this.titleClickHandler = this.titleClickHandler.bind(this);
   }
 
-  titleClickHandler(data) {
-console.log(this.state)
 
-    this.setState({currentVideo: data})
-console.log(this.state)
+  titleClickHandler(data) {
+    this.setState({currentVideo: data});
+  }
+
+  searchHandler(input) {
+    console.log('before', input)
+    this.setState($('input').val()})
+    // console.log('after', this.state.value)
+
+    window.searchYouTube("hello");
+
+  }
+
+  returnValue(){
+    return this.state.value;
   }
 
   render() {
@@ -21,7 +35,7 @@ console.log(this.state)
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Search />
+            <Search searchHandler = {this.searchHandler} value = {this.state.value}/>
           </div>
         </nav>
         <div className="row">
@@ -35,7 +49,7 @@ console.log(this.state)
       </div>
     );
   }
-};
+}
 
 
 
